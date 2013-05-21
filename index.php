@@ -1,32 +1,39 @@
 <html>
 <body>
 <script src="js/jquery.js"></script>
+<script src="js/base64.js"></script>
 <form id="loginForm" method="post">
 Username: <input id="usernameInput" type="text">
 Password: <input id="passwordInput" type="text">
 <input type="submit">
 </form>
 <script>
-
-
 $(document).ready(function(){
-  var username = $('#usernameInput').val();
-  var password = $('#passwordInput').val();
-  $('#loginForm').submit(function() {
-  console.log(username);
-   $.ajax
-   ({
-     url: "http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028",
-     dataType: 'json',
-     data: {'username': 'gamification', 'password': 'gami123++'},
-     success: function (){
-      alert('Thanks for login!'); 
-     }
+
+  function make_basic_auth(user, password) {
+    var tok = user + ':' + password;
+    var hash = Base64.encode(tok);
+    return "Basic " + hash;
+  }
+
+  var url = 'http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028';
+  $("#loginForm").submit(function() {
+    var auth = make_basic_auth('gamification','gami123++');
+    $.ajax({
+      url : url,
+      method : 'GET',
+      beforeSend : function(req) {
+        req.setRequestHeader('Authorization', auth);
+      },
+      success: function(){alert("yay!");},
+      complete: function( jqXHR, textStatus ) {
+	console.log(jqXHR);  
+	console.log(textStatus); 
+      }
+    });
+    return false;
   });
-  return false;
-  });
- 
-  }); 
+}); 
 </script>
 </body>
 </html>
