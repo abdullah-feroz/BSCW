@@ -1,15 +1,16 @@
 before
 <?php
 $url = "http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028";
-
-//$username
-//$password 
-
+$username = $_POST["username"];
+$password = $_POST["password"];
+echo "username";
+echo $username;
 // create a new cURL resource
 $myRequest = curl_init($url);
 
 // do a POST request, using application/x-www-form-urlencoded type
-curl_setopt($myRequest, CURLOPT_POST, TRUE);
+//curl_setopt($myRequest, CURLOPT_POST, TRUE);
+curl_setopt ($myRequest, CURLOPT_FOLLOWLOCATION, 1);
 // credentials
 curl_setopt($myRequest, CURLOPT_USERPWD, "$username:$password");
 // returns the response instead of displaying it
