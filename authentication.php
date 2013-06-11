@@ -2,8 +2,8 @@ before
 <?php
 $url = "http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028";
 
-$username = 'gamification';
-$password = 'gami123++';
+//$username
+//$password 
 
 // create a new cURL resource
 $myRequest = curl_init($url);

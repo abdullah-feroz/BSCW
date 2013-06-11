@@ -6,9 +6,8 @@ $username = 'gamification';
 $password = 'gami123++';
 
 // create a new cURL resource
-
 $myRequest = curl_init($url);
-echo $url;
+
 // do a POST request, using application/x-www-form-urlencoded type
 curl_setopt($myRequest, CURLOPT_POST, TRUE);
 // credentials
