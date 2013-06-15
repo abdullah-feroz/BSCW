@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container
+{
+	width: 100%;
+	border-top:4px solid #000;
+}
+
+#header {
+	width:100%;
+	margin-top:4%;
+}
+
+#bgdiv {
+	position:absolute;
+	width:100%;
+	height:420px;
+	top:0;
+	left:0;
+	background-image:url(../images/bg.JPG);
+	background-size:100%;
+	background-position:0px -100px;
+	z-index:-99999;
+}
+
+#bgdiv-2 {
+	position:absolute;
+	width:100%;
+	height:180px;
+	top:0;
+	left:0;
+	background-image:url(../images/bg2.jpg);
+	background-size:80%;
+	background-repeat:no-repeat;
+	background-color:#184773;
+	z-index:-99999;
+	border-bottom:4px solid rgb(0,102,204);
+}
+
+header {
+	width:1020px;
+	margin:0 auto;
+}
+
+#container > div > header > nav {
+	float:right;
+	margin-top:.8%;
+}
+
+
+#header > header {
+	
+}
+#div-01{
+	width:100%;
+	height:25px;
+	background-color:rgb(0,0,0);
+}
+
+#container > div > header > #searchbox {
+	float:right;
+	margin-top:4%;
+	margin-right:2%;
+}
+
+#rotator {
+	width:100%;
+	margin-top:4%;
+}
+
+#rotator > section {
+	width:1020px;
+	margin:0 auto;
+	text-align:center;
+}
+
+#rotator-2 {
+	width:100%;
+	margin-top:3%;
+	padding-bottom:1.35%;
+	border-bottom:1px solid #CCC;
+}
+
+#rotator-2 > section {
+	width:1020px;
+	margin:0 auto;
+	text-align:center;
+}
+
+
+.text-area {
+	width:100%;
+	margin-top:4%;
+	box-shadow: 10px 0px 2px 2px 4px #000;
+	background: #f2f2f2; /* Old browsers */
+	border-top:1.5px solid rgb(153,153,153);
+}
+
+.text-area > section {
+	width:1020px;
+	margin:0 auto;
+	margin-top:4%;
+	text-align:center;
+}
+
+#process {
+	width:100%;
+	margin-top:4%;
+	margin-bottom:8%;
+	box-shadow: 10px 0px 2px 2px 4px #000;
+	background: #f2f2f2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e5e5e5 0%, #f2f2f2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e5e5e5 0%,#f2f2f2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+
+	border-top:1.5px solid #999;
+}
+
+
+#process > section {
+	width:1020px;
+	margin:0 auto;
+	text-align:center;
+}
+
+#process > section > div {
+	width:1020px;
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+
+#contents {
+	width:100%;
+	margin-top:4%;
+	box-shadow: 1px 1px 4px #000;
+	background: #f2f2f2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e5e5e5 0%, #f2f2f2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e5e5e5 0%,#f2f2f2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e5e5e5 0%,#f2f2f2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+	border-top:1.5px solid #fff;
+}
+
+
+#contents > section {
+	width:1020px;
+	margin:0 auto;
+	text-align:center;
+}
+
+#filter {
+	width:100%;
+}
+
+#filter > ul {
+	width:1020px;
+	margin:0 auto;
+	padding-top:7.5%;
+	clear:both;
+}
+
+#filter > ul > li {
+	float:left;
+	padding-right:2%;
+	font-size:1.5em;
+	font-weight:200;
+}
+
+#footer {
+	width:100%;
+	margin-top:4%;
+}
+
+#footer > footer {
+	width:1020px;
+	margin:0 auto;
+	text-align:center;
+	margin-bottom:4%;
+}
+
+
+#sub-page-contents {
+	width:100%;
+}
+
+#sub-page-contents > section {
+	width:1020px;
+	margin:0 auto;
+	margin-top:2%;
+}
+
+#sub-page-contents > section > aside {
+	float:right;
+	width:30%;
+}
+
+#sub-page-contents > section > section {
+
+}
+
