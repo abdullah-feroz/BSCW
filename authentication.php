@@ -1,10 +1,9 @@
-before
 <?php
-$url = "http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028";
-$username = $_POST["username"];
-$password = $_POST["password"];
-echo "username";
-echo $username;
+$url = "http://merkur.informatik.rwth-aachen.de/bscw/bscw.cgi/3496028?op=rss";
+$username = "gamification";
+$password = "gami123++";
+//echo "username";
+//echo $username;
 // create a new cURL resource
 $myRequest = curl_init($url);
 
@@ -19,8 +18,8 @@ curl_setopt($myRequest, CURLOPT_RETURNTRANSFER, 1);
 // do request, the response text is available in $response
 $response = curl_exec($myRequest);
 
-echo $response;
-print_r ($response);
+//echo $response;
+//print_r ($response);
 // status code, for example, 200
 $statusCode = curl_getinfo($myRequest, CURLINFO_HTTP_CODE);
 
@@ -28,5 +27,25 @@ $statusCode = curl_getinfo($myRequest, CURLINFO_HTTP_CODE);
 curl_close($myRequest);
 ?>
 
-abdfhdsjk
-<?php echo $response ?>
+
+<?php 
+//echo $response;
+
+/////////////////////////////////////////////////////
+
+
+//$content = file_get_contents($response);
+	
+	$x = new SimpleXmlElement($response);
+	
+	
+	
+	foreach($x->channel->item as $entry) {
+		//echo "<a href='$entry->link' title='$entry->title'>" . $entry->title . "</a><br />";
+		echo "Link:".$entry->link."<br /> Title:".$entry->title."<br /> Description:".$entry->description."<br /><br /><br />";
+		
+		}
+	echo "</ul>";
+/////////////////////////////////////////////////////
+
+ ?>
