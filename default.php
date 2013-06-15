@@ -2,8 +2,6 @@
 
 include("conf/controller.php");
 $control = new Controller();
- 
-
 ?>
 <!DOCTYPE HTML>
 <html>
