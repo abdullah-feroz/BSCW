@@ -2408,117 +2408,192 @@
 
                 if (hi.series.bars.show)
                     drawBarHighlight(hi.series, hi.point);
- ! Javascript plelse/*! Javascript ploery,drawPointHighlight(hi.series, hi.p7.
-);/*! Javascript}/*! Javascriptoctx.restore( license by IOLA/*! JavascriptexecuteHooks(h.col.v. 0Overlay, [.
- ] license by , December /*! Javascfunction h*
- * Rels, e MIT, auto) {/*! Javascriptif (typeof s == "number")/*! Javascript plos = ed und[s];
-lors.
- * 
- * Version 1.e MIT.
- * 
- * Incolors.
- * 
- *icenvar pery c.datae MITshe MITsizelicense by IOLAles:
- *
-  Laursen, October 20.slice(ps *working ale('(
- *
-+ 1) license by IOLA, D/*! Javascripte byi = indexOf *
- * Relr workin license by IOLA Veri.
- -1 under the MIT licens jQuery fs.push({ color : r workin:working with: with } lic/*! Javascript plotriggerRers.js, we i
-// first an inl, December 2007ttin*   c!with (c.r, c.g, c.b, c.a);
- *   [i].() //= fals.
- *
- * Ex, December 2007ce
+                else
+                    drawPointHighlight(hi.series, hi.point);
+            }
+            octx.restore();
+            
+            executeHooks(hooks.drawOverlay, [octx]);
+        }
+        
+        function highlight(s, point, auto) {
+            if (typeof s == "number")
+                s = series[s];
 
-/* Plugin forun jQuery for workin colors.
- * 
- * Ver1.
- null &&.
- *
- *  ratlog(c.r, c.g, c.b, c.a);
- *    = [imats "rgba(100,50,25,0.4)"
- *
- * Note that .scale() and .add() returnlors.
- * 
- * Version 1.1.
- * 
- * Inspiration from jQuery color animation plugin by John Resig.
- *
- * Released 
- *
- * Examples:
- *
- *   $.co[e MITimation plugin by lor.extract($("#mydiv"), 'background-color');
- *   con!ole.log(c.r, c.g, c.b, c.a);
- *   $sp").sci, 1returns "rgba(100,50,25,0.4)"
- *
- * Note that .scale() and .add() rer convenience
+            if (typeof point == "number") {
+                var ps = s.datapoints.pointsize;
+                point = s.datapoints.points.slice(ps * point, ps * (point + 1));
+            }
 
-/* Plugin foract($("#mydiv"), 'bac under the MIT lifor (lor.extr0; i <.a);
- *   $length; ++i under the MIT license byh =stead of makin};B.color.make=func Verhsed und.
- sher hhe MIT[0].
- p[0]g library for jQuery, b,G.g,G.a)}1return 1]ion(J,I){for(var H=).toreturn ilicense by IOLA, December 2007owerCas-1here
-// for convenience
+            var i = indexOfHighlight(s, point);
+            if (i == -1) {
+                highlights.push({ series: s, point: point, auto: auto });
 
-/* Plugin forv. 0.7.
- *
- * Reled understring does
- * produce byx = 0)"){[0], y B.color.1],;B.color.make=funcaxisn B.ed und.x{var,){vare(E)=B.coloy{var// first an inline dependency Verx <){var .min || x >9]{1,3})ax*\)/y0-9]{1,y})\s*\)/yexec(F)y{retion(J,I){for(var H=owerCa// first an inline dependencye by 7.
-Radiuery color rse("#ffr-9]{1,+})\s*,\s*([0-9]lineWidth / 2};B.color.make=.
- *\.[0-9]+)?B.color0-9]{1*\)/.exec(F)){returnstrokeStyle = $.color.parse0, 0, 0arseFl).scale('a', 0.5).toString
-// first an inle by{1,3})\= 1.5e('rgb',0-9]{1r.parse=function(F)n B.]{1,3}p2c(x)r.parse=function(F)e(E)arseIn)){ry
-// first an inline dependency.
- *beginPath
-// first an inle a c\s*,\s*([0-9]symbol.
- *circletion(J,I){for(var H=.
- *arc(x, y,\.[0-9], 0, 2 * Math.PI, one. license by IOLAtting library for jQue.[0-9]+)?)\%\s*,\s*((.
- , .[0-9]+)?)\%\s.[0-9]+)?)\s*\)/.exec.
- *closef(E=/rgba\(\s*([0-9]+,parseInt(E
-// first an *   var c = et(0),"body")BarE=="rgba(0, 0, 0, 0)"){E="transparent"}return C(parseInt(.[0-9]+bar?:\.[0-9]+)rseInt(E[2],10),parseInt(E[3],10),parseFloat(E[4]))}if(E=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\fill[3],10),parseFloat(E[4]))}if(E=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\barLef
- *  )}if(E=/#([align.
- *left" ? 0 : -D]||[0,0,0];bar-9]+)/s*\)/.exec(F)){r)){retuadd('a.pars};B.color[245,242]*\)/0,)}else{E,0],blue:\s*,\s*([0 A={aqua:[0,2r.parse=function(F)lue:0,})/.exec(F() {){break}+E[3],16); },C=B.color.make;b\(\s*([0-9],),par9],darkgr=/#([horizontal0],darkkhaki:[\.[0-9]+)-F0-9]{2})([a-fA-F0-9]{2})/.exec(FgetCseFlOrG{1,3ent(spec, bottom, top, defaulrange: colors.
- * 
- * Version 1.1pec.
- *s9]+)?tion(J,I){for(var H=owerCas150,+)?)\s*\)/.exec(F))under the MIT licens// assume this is a g5,140,0255,0, IE currently only],green:[0,128,0],indsupport],khsimple verticalhaki:[240,properly, so that's],green:[0,128,0],indwhat we[224,255 tooder the MIT license byaki:[240,= FloatreateLinea255,140,0]0[153,500,0]chid: license by IOLA0;G.a=D!=null?D:1;;G.g=H(0,parseInt(, l,16)pecarseFl(0,parseIng),2lInt(G.b),255);G.a=H(0,G.a,-9]+(?:\c,192,203],purpne=function(){return B
- * Version 1.cetur,darkviolt:[128,0,128],red:[255,055,0,0],snew parseFloat(E[4,204],darkred2],white:[255,255,255],-9]+(?:\c.br* Renessetur crasot(placeholder, data_, opt
-  
-(fuco\(\s*([0rgb', _, plugins)    // data is on the form:ions_,opacity{
-        // data is on the form:
-     .a *= ither juslot(placeholder, data_, optsilvco.[0-9]+)?)\%\s*,\s*([0-9]+
- * V. 1.1: Fix error    var saki:[240.addange:Stop(i / (l - 1), cPlot(placeholder, da       
-        vaet:[148,0,211],fuchsia:[2aki:[240G.normalize=function(){function H *   var $.plo0],mlugin fo(placeholder, urse, opn fosuery);
+                triggerRedrawOverlay();
+            }
+            else if (!auto)
+                highlights[i].auto = false;
+        }
+            
+        function unhighlight(s, point) {
+            if (s == null && point == null) {
+                highlights = [];
+                triggerRedrawOverlay();
+            }
+            
+            if (typeof s == "number")
+                s = series[s];
 
-// //e byt0 = new DatfA-F0-9]{2})([e by 4d", "showPlot($],
-        )        legend:,4da74d".pluginsPlot(placeho//(window.console ? lFormat.log : alert)("time used (msecs): " + ((show: true).getTime() - t0BoxBorderC0.5).toStringowerCas    };B.col}eturns "rgend tavers for= "0.7"};B.col boxes
-     ble
-  lor={};B;B.col//or for ,255]9]+)? with the    e dg=H(matted accordegento fmt boxes
-      defau: tr, "#9440ed"]d,ph
-, monthName: {
-         e by[0],Pad, "#9440ed"]nuery);
+            if (typeof point == "number")
+                point = s.data[point];
 
-// the          ))}if(E=/rgba\(\owerCasn0,parse.
- 1 ? "0gin:  :: 5, // distaabelheme used for grap(?:\.lor={};B.color.me byescapsitione., padNex", "#ne.
- *
- * V. 1);reourner dBoxBUTCH    ue,
-            isAMturn     < 1s*\)/.exec(F Vertion of dejust cras;B.color.make=           } ["Jan", "Feb    Mar    Apw: nuMay    Ju     Jul: nulug    Sep    Oct    Nov    Dec"imation plugin Verfmt.search(/%p|%P/)eturn"rgb("+[G.r,G.g,G..colo     > 12log(c.r, c.g, c.b, c.a       ime"
-- background
- r witn the sameime"
- = 0: null, // null or "time"
-            color: ntion(){function H(J,K=H(0,parseInt(G.g),2osit,parseInt(G.b),255);G.a=H(0,,0],silvositcharAt(i
-// first an inline dependency Ver null,uery);
+            var i = indexOfHighlight(s, point);
+            if (i != -1) {
+                highlights.splice(i, 1);
 
-// the actuswitch (cuery);
+                triggerRedrawOverlay();
+            }
+        }
+        
+        function indexOfHighlight(s, p) {
+            for (var i = 0; i < highlights.length; ++i) {
+                var h = highlights[i];
+                if (h.series == s && h.point[0] == p[0]
+                    && h.point[1] == p[1])
+                    return i;
+            }
+            return -1;
+        }
+        
+        function drawPointHighlight(series, point) {
+            var x = point[0], y = point[1],
+                axisx = series.xaxis, axisy = series.yaxis;
+            
+            if (x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
+                return;
+            
+            var pointRadius = series.points.radius + series.points.lineWidth / 2;
+            octx.lineWidth = pointRadius;
+            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
+            var radius = 1.5 * pointRadius,
+                x = axisx.p2c(x),
+                y = axisy.p2c(y);
+            
+            octx.beginPath();
+            if (series.points.symbol == "circle")
+                octx.arc(x, y, radius, 0, 2 * Math.PI, false);
+            else
+                series.points.symbol(octx, x, y, radius, false);
+            octx.closePath();
+            octx.stroke();
+        }
 
-// the actucase 'h':y2], rgin:ime"; break};B.color.make=funcansforH: null,ainer wase co)nsform is set, this should be thM inverse functibackgrouMinutes()                   min: null, // Sin. value to show, nullSecond set automatically
-                d: null, // ibackgrou: true,sform is set, this should be thm: null, // ihow, null ion ()', -0caleMargin: null, // margin in %y
-                   FullYearoscaleMargin: null, // margin in %b: null, // ition of de[o-setting min/m]caleMargin: null, // margin in %p: null,( to ) ? (rgin:"am") :umber ->pm"                    ticks: null, P null, // fn: number ->AMtring
-     PM             labelWidth: null, // 0: null, /;means auto-truecaleMargin: null, // margi       
-        vaions_her tans auuery);
+        function drawBarHighlight(series, point) {
+            octx.lineWidth = series.bars.lineWidth;
+            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
+            var fillStyle = $.color.parse(series.color).scale('a', 0.5).toString();
+            var barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
+            drawBar(point[0], point[1], point[2] || 0, barLeft, barLeft + series.bars.barWidth,
+                    0, function () { return fillStyle; }, series.xaxis, series.yaxis, octx, series.bars.horizontal, series.bars.lineWidth);
+        }
 
-// the actual Fverse functi
-                // es:
-ans auto-detect
-        her to reserve space even ir$.colo
-                // same n't show, // size in pixels of null, // nullhat .scale() and .add() return the nder the MIT licensf axis
- *%tion(J,I){for(var H=nc
-         veSpa/*! Javascript plotting library for jQuery,  alignTicksWithAxis: nulnull, // possibly diffowerCasr.join(""Plot(plathin ploQuery objeoundgrap0,25by lower multiightof baing librlugin forfloorInBase(n,0],sber to transfoowerCasll, *([0-9]+ mont(n /ull, /        inTickSi})(jQuerFloat
+        function getColorOrGradient(spec, bottom, top, defaultColor) {
+            if (typeof spec == "string")
+                return spec;
+            else {
+                // assume this is a gradient spec; IE currently only
+                // supports a simple vertical gradient properly, so that's
+                // what we support too
+                var gradient = ctx.createLinearGradient(0, top, 0, bottom);
+                
+                for (var i = 0, l = spec.colors.length; i < l; ++i) {
+                    var c = spec.colors[i];
+                    if (typeof c != "string") {
+                        var co = $.color.parse(defaultColor);
+                        if (c.brightness != null)
+                            co = co.scale('rgb', c.brightness)
+                        if (c.opacity != null)
+                            co.a *= c.opacity;
+                        c = co.toString();
+                    }
+                    gradient.addColorStop(i / (l - 1), c);
+                }
+                
+                return gradient;
+            }
+        }
+    }
+
+    $.plot = function(placeholder, data, options) {
+        //var t0 = new Date();
+        var plot = new Plot($(placeholder), data, options, $.plot.plugins);
+        //(window.console ? console.log : alert)("time used (msecs): " + ((new Date()).getTime() - t0.getTime()));
+        return plot;
+    };
+
+    $.plot.version = "0.7";
+    
+    $.plot.plugins = [];
+
+    // returns a string with the date d formatted according to fmt
+    $.plot.formatDate = function(d, fmt, monthNames) {
+        var leftPad = function(n) {
+            n = "" + n;
+            return n.length == 1 ? "0" + n : n;
+        };
+        
+        var r = [];
+        var escape = false, padNext = false;
+        var hours = d.getUTCHours();
+        var isAM = hours < 12;
+        if (monthNames == null)
+            monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        if (fmt.search(/%p|%P/) != -1) {
+            if (hours > 12) {
+                hours = hours - 12;
+            } else if (hours == 0) {
+                hours = 12;
+            }
+        }
+        for (var i = 0; i < fmt.length; ++i) {
+            var c = fmt.charAt(i);
+            
+            if (escape) {
+                switch (c) {
+                case 'h': c = "" + hours; break;
+                case 'H': c = leftPad(hours); break;
+                case 'M': c = leftPad(d.getUTCMinutes()); break;
+                case 'S': c = leftPad(d.getUTCSeconds()); break;
+                case 'd': c = "" + d.getUTCDate(); break;
+                case 'm': c = "" + (d.getUTCMonth() + 1); break;
+                case 'y': c = "" + d.getUTCFullYear(); break;
+                case 'b': c = "" + monthNames[d.getUTCMonth()]; break;
+                case 'p': c = (isAM) ? ("" + "am") : ("" + "pm"); break;
+                case 'P': c = (isAM) ? ("" + "AM") : ("" + "PM"); break;
+                case '0': c = ""; padNext = true; break;
+                }
+                if (c && padNext) {
+                    c = leftPad(c);
+                    padNext = false;
+                }
+                r.push(c);
+                if (!padNext)
+                    escape = false;
+            }
+            else {
+                if (c == "%")
+                    escape = true;
+                else
+                    r.push(c);
+            }
+        }
+        return r.join("");
+    };
+    
+    // round to nearby lower multiple of base
+    function floorInBase(n, base) {
+        return base * Math.floor(n / base);
+    }
+    
+})(jQuery);
