@@ -18,8 +18,6 @@ else {
 <title>BSCW Gamification Home</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" />
 <script src="js/scripts.js"></script>
-<script src="js/jquery.js"></script>
-<script src="js/flot/jquery.flot.js"></script>
 </head>
 
 <body>
